@@ -1,5 +1,6 @@
 # tkinter comes with python by default
 from tkinter import *
+import tkinter
 # mysql library
 import pymysql
 # encryption library
@@ -9,9 +10,12 @@ import random
 from logger.log import Logger
 from db.insert import load_pii
 from db.insert import load_user
+from db.insert import load_pfi
+from db.insert import load_stocks
+from db.insert import load_bonds
 
 # declare logger object and path to store the logs
-logger_object = Logger("T:\DevTools\Semester-3\COMP-270\guiproject\gui.log")
+logger_object = Logger("gui.log")
 
 # declare tkinter objects
 window = Tk()
@@ -26,7 +30,14 @@ cursor = connect.cursor()
 key = Fernet.generate_key()
 fernet = Fernet(key)
 
+# get binary
+# def get_binary():
+#     print(newCheckBox)
+
+
 # define GUI properties
+inp = Checkbutton(window, text="checkbox")
+# inp = Checkbutton(window, text="checkbox",  onvalue=1, offvalue=0)
 input0 = Label(window, text="PII Data").place(x=150, y=30)
 input1 = Label(window, text="UserName").place(x=10, y=50)
 UserName = Entry(window, show='*')
@@ -62,7 +73,31 @@ CCDebt.place(x=150, y=250)
 input12 = Label(window, text="LifeInsurance").place(x=10, y=270)
 LifeInsurance = Entry(window, show='*')
 LifeInsurance.place(x=150, y=270)
-
+# newCheckBox= IntVar()
+# v1 = Checkbutton(window, text='newCheckBok', variable=newCheckBox, onvalue=True, offvalue=False, command=get_binary)
+stocks_invested = IntVar()
+Checkbutton(window, text="stocks_invested", variable=stocks_invested).place(x=150, y=290)
+input13 = Label(window, text="StockName").place(x=10, y=310)
+StockName = Entry(window, show='*')
+StockName.place(x=150, y=310)
+input14 = Label(window, text="StockPurchasePrice").place(x=10, y=330)
+StockPurchasePrice = Entry(window, show='*')
+StockPurchasePrice.place(x=150, y=330)
+input15 = Label(window, text="StockPurchaseQuantity").place(x=10, y=350)
+StockPurchaseQuantity = Entry(window, show='*')
+StockPurchaseQuantity.place(x=150, y=350)
+# print(stocks_invested)
+bonds_invested = IntVar()
+Checkbutton(window, text="bonds_invested", variable=bonds_invested).place(x=150, y=370)
+input13 = Label(window, text="BondName").place(x=10, y=390)
+BondName = Entry(window, show='*')
+BondName.place(x=150, y=390)
+input14 = Label(window, text="BondMaturityDate").place(x=10, y=410)
+BondMaturityDate = Entry(window, show='*')
+BondMaturityDate.place(x=150, y=410)
+input15 = Label(window, text="BondInvestedAmount").place(x=10, y=430)
+BondInvestedAmount = Entry(window, show='*')
+BondInvestedAmount.place(x=150, y=430)
 
 # function to generate user IDs
 def generate_userid():
@@ -97,17 +132,79 @@ def push_pii(uid):
     load_pii(**load)
 
 
+# function to insert data into pfi table
+def push_pfi(uid):
+    if stocks_invested.get():
+        stocks_id = uid,
+    else:
+        stocks_id = "xxxx"
+    if bonds_invested.get():
+        bonds_id = uid,
+    else:
+        bonds_id = "yyyy"
+    load = {
+        "fernet": fernet,
+        "uid": uid,
+        "enc_bank_account": fernet.encrypt(BankAccountUserName.get().encode()),
+        "enc_retirement_account": fernet.encrypt(RetirementAccount.get().encode()),
+        "enc_cc_debt": fernet.encrypt(CCDebt.get().encode()),
+        "enc_life_insurance": fernet.encrypt(LifeInsurance.get().encode()),
+        "stocks_id": stocks_id,
+        "bonds_id": bonds_id
+    }
+    load_pfi(**load)
+
+
+def push_stocks_data(uid):
+    load = {
+    "fernet": fernet,
+    "uid": uid,
+    "enc_stock_name": fernet.encrypt(StockName.get().encode()),
+    "enc_stock_purchase_price": fernet.encrypt(StockPurchasePrice.get().encode()),
+    "enc_stock_purchase_quantity": fernet.encrypt(StockPurchaseQuantity.get().encode())
+    }
+    load_stocks(**load)
+
+
+def push_bonds_data(uid):
+    load = {
+        "fernet": fernet,
+        "uid": uid,
+        "enc_bond_name": fernet.encrypt(BondName.get().encode()),
+        "enc_bond_maturity_date": fernet.encrypt(BondMaturityDate.get().encode()),
+        "enc_bond_invested_amount": fernet.encrypt(BondInvestedAmount.get().encode())
+    }
+    load_bonds(**load)
+
 # defining wrapper functon to orchestrate data loading to RDBMS
 def push_data():
     uid = generate_userid()
+    stocks = stocks_invested.get()
+    bonds = bonds_invested.get()
     push_user(uid)
     push_pii(uid)
+
+# push stocks data only if stocks_invested is true
+    if stocks:
+        # print(stocks_invested.get())
+        logger_object.error("pushing stocks invested data for", uid)
+        push_stocks_data()
+    else:
+        logger_object.error("stocks invested was set to false and no data inserted", uid)
+
+# push bonds data only if bonds_invested is true
+    if bonds:
+        # print(bonds_invested.get())
+        logger_object.error("pushing bonds invested data for", uid)
+        push_bonds_data()
+    else:
+        logger_object.error("bonds invested was set to false and no data inserted", uid)
 
 
 # defining main function
 def main():
     pushdata_button = Button(window, text="Push Data", command=push_data)
-    pushdata_button.place(x=125, y=310)
+    pushdata_button.place(x=125, y=460)
     window.mainloop()
 
 
