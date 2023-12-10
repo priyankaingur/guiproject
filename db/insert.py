@@ -29,7 +29,6 @@ def load_pii(**load):
     uid = load['uid']
     try:
         fernet = load['fernet']
-        # uid = load['uid']
         enc_user_name = load['enc_user_name']
         enc_user_email = load['enc_user_email']
         enc_user_address = load['enc_user_address']
@@ -41,11 +40,11 @@ def load_pii(**load):
             "insert into pii(id, user_name, user_email, address, contact_number, date_of_birth, "
             "social_security_number, driver_license)"
             "values('" + str(
-                uid) + "', aes_encrypt(('" + fernet.decrypt(enc_user_name).decode() + "'),'key'), '" + fernet.decrypt(
-                enc_user_email).decode() + "', '" + fernet.decrypt(
-                enc_user_address).decode() + "','" + fernet.decrypt(enc_user_contact).decode() + "','" + fernet.decrypt(
-                enc_user_dob).decode() + "','" + fernet.decrypt(enc_user_ssn).decode() + "','" + fernet.decrypt(
-                enc_user_dl).decode() + "')")
+                uid) + "', aes_encrypt(('" + fernet.decrypt(enc_user_name).decode() + "'),'key'), '" + "', aes_encrypt(('" + fernet.decrypt(
+                enc_user_email).decode() + "'),'key'), '" + "', '" + "', aes_encrypt(('" + fernet.decrypt(
+                enc_user_address).decode() + "'),'key'), '" + "','" + "', aes_encrypt(('" + fernet.decrypt(enc_user_contact).decode() + "'),'key'), '" + "','" + "', aes_encrypt(('" + fernet.decrypt(
+                enc_user_dob).decode() + "'),'key'), '" + "','" + "', aes_encrypt(('" + fernet.decrypt(enc_user_ssn).decode() + "'),'key'), '" + "','" + "', aes_encrypt(('" + fernet.decrypt(
+                enc_user_dl).decode() + "'),'key'), '" + "')")
         connect.commit()
         logger_object.info("data has been pushed to pii table" + str(uid))
     except Exception as e:
@@ -57,7 +56,6 @@ def load_pfi(**load):
     uid = load['uid']
     try:
         fernet = load['fernet']
-        # uid = load['uid']
         enc_bank_account = load['enc_bank_account']
         enc_retirement_account = load['enc_retirement_account']
         enc_cc_debt = load['enc_cc_debt']
@@ -68,10 +66,10 @@ def load_pfi(**load):
             "insert into pfi(id, savings_account_number, retirements_account, cc_debt, life_insurance, stocks_id, "
             "bonds_id)"
             "values('" + str(
-                uid) + "', aes_encrypt(('" + fernet.decrypt(enc_bank_account).decode() + "'),'key'), '" + fernet.decrypt(
-                enc_retirement_account).decode() + "', '" + fernet.decrypt(
-                enc_cc_debt).decode() + "','" + fernet.decrypt(enc_life_insurance).decode() + "','" + fernet.decrypt(
-                stocks_id).decode() + "','" + fernet.decrypt(bonds_id).decode() + "')")
+                uid) + "', aes_encrypt(('" + fernet.decrypt(enc_bank_account).decode() + "'),'key'), '" + "', aes_encrypt(('" + fernet.decrypt(
+                enc_retirement_account).decode() + "'),'key'), '" + "', '" + "', aes_encrypt(('" + fernet.decrypt(
+                enc_cc_debt).decode() + "'),'key'), '" + "','" + "', aes_encrypt(('" + fernet.decrypt(enc_life_insurance).decode() + "'),'key'), '" + "','" + "', aes_encrypt(('" + fernet.decrypt(
+                stocks_id).decode() + "'),'key'), '" + "','" + "', aes_encrypt(('" + fernet.decrypt(bonds_id).decode() + "'),'key'), '" + "')")
         connect.commit()
         logger_object.info("data has been pushed to pfi table" + str(uid))
     except Exception as e:
@@ -83,7 +81,6 @@ def load_stocks(**load):
     uid = load['uid']
     try:
         fernet = load['fernet']
-        # uid = load['uid']
         enc_stock_name = load['enc_stock_name']
         enc_stock_purchase_price = load['enc_stock_purchase_price']
         enc_stock_purchase_quantity = load['enc_stock_purchase_quantity']
@@ -91,9 +88,9 @@ def load_stocks(**load):
             "insert into stocks_invested(stk_id, stock_name, stock_purchase_price, stock_quantity)"
             "values('" + str(
                 uid) + "', aes_encrypt(('" + fernet.decrypt(
-                enc_stock_name).decode() + "'),'key'), '" + fernet.decrypt(
-                enc_stock_purchase_price).decode() + "', '" + fernet.decrypt(
-                enc_stock_purchase_quantity).decode() + "')")
+                enc_stock_name).decode() + "'),'key'), '" +  "', aes_encrypt(('" + fernet.decrypt(
+                enc_stock_purchase_price).decode() + "'),'key'), '"  + "', '" +  "', aes_encrypt(('" + fernet.decrypt(
+                enc_stock_purchase_quantity).decode() + "'),'key'), '"  + "')")
         connect.commit()
         logger_object.info("data has been pushed to stocks table" + str(uid))
     except Exception as e:
@@ -105,7 +102,6 @@ def load_bonds(**load):
     uid = load['uid']
     try:
         fernet = load['fernet']
-        # uid = load['uid']
         enc_bond_name = load['enc_bond_name']
         enc_bond_maturity_date = load['enc_bond_maturity_date']
         enc_bond_invested_amount = load['enc_bond_invested_amount']
@@ -113,9 +109,9 @@ def load_bonds(**load):
             "insert into stocks_invested(bnd_id, bond_name, maturity_date, invested_amount)"
             "values('" + str(
                 uid) + "', aes_encrypt(('" + fernet.decrypt(
-                enc_bond_name).decode() + "'),'key'), '" + fernet.decrypt(
-                enc_bond_maturity_date).decode() + "', '" + fernet.decrypt(
-                enc_bond_invested_amount).decode() + "')")
+                enc_bond_name).decode() + "'),'key'), '" +  "', aes_encrypt(('" + fernet.decrypt(
+                enc_bond_maturity_date).decode() + "'),'key'), '"  + "', '" +  "', aes_encrypt(('" + fernet.decrypt(
+                enc_bond_invested_amount).decode() + "'),'key'), '"  + "')")
         connect.commit()
         logger_object.info("data has been pushed to bonds table" + str(uid))
     except Exception as e:
