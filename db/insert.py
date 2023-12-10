@@ -5,10 +5,10 @@ from logger.log import Logger
 # including vault is outside scope of this project and for simplicity, dummy connection password is used
 
 
-connect = pymysql.connect(host="localhost", user="root", passwd="root", database="default")
+# connect = pymysql.connect(host="localhost", user="root", passwd="root", database="default")
 # uncomment above for initial run and validation and use below for more secured connection
-# connect = pymysql.connect(host="localhost", user="root", passwd="root", database="default", ssl_cert="root-cert.pem",
-#                           ssl_key="root-key.pem", ssl_ca="ca.pem")
+connect = pymysql.connect(host="localhost", user="root", passwd="root", database="default", ssl_cert="root-cert.pem",
+                          ssl_key="root-key.pem", ssl_ca="ca.pem")
 cursor = connect.cursor()
 
 # from cryptography.fernet import Fernet
