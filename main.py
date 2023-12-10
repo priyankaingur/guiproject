@@ -70,7 +70,7 @@ def generate_userid():
         logger_object.info("generated user ID successfully")
         user_id = random.randint(0, 9999999)
         return user_id
-    except Exception as e:
+    except Exception:
         logger_object.error("unable to generate the user ID")
         return None
 

@@ -11,8 +11,7 @@ connect = pymysql.connect(host="localhost", user="root", passwd="root", database
                           ssl_key="root-key.pem", ssl_ca="ca.pem")
 cursor = connect.cursor()
 
-# from cryptography.fernet import Fernet
-
+# declare logger object
 logger_object = Logger("T:\DevTools\Semester-2\COMP-261\guiproject\gui.log")
 
 
@@ -22,7 +21,7 @@ def load_user(**load):
         cursor.execute("insert into user(user_id) values('" + str(uid) + "')")
         connect.commit()
         logger_object.info("successfully pushed data to users table")
-    except Exception as e:
+    except Exception:
         logger_object.error("Failed to insert user data")
 
 
