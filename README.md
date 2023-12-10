@@ -24,3 +24,12 @@ code base to generate a GUI to accept sensitive data and insert to a database
 3. customize logs path based on the project need
 4. explore logger/log.py to get more insights into the logger module
 5. refer gui.log for the logging format and it is highly customizable per project need
+
+## insert module
+
+1. insert module connects to database securly
+2. input data is secured by cryptography library
+3. data at rest is secured by in-built encryption algorithm
+4. data extraction should include correct decryption algorithm to view the data
+5. In real-world scenario, the connection parameters like username, password, db hostname is dynamically fetched from secret management system like HasiCorp vault
+6. including vault is outside scope of this project and for simplicity, dummy connection password is used
