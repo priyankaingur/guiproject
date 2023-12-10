@@ -6,9 +6,9 @@ code base to generate a GUI to accept sensitive data and insert to a database
 
 ## Prerequisite
 
-> `pip install -r requirements.txt`
-> MySQL running in local
-> update DB connection parameters under db/insert.py
+- pip install -r requirements.txt
+- MySQL running in local
+- update DB connection parameters under db/insert.py
 
 ## Description
 
