@@ -222,3 +222,17 @@
 [INFO] data has been pushed to stocks table 511190
 [INFO] pushing bonds invested data for 511190
 [INFO] data has been pushed to bonds table 511190
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[ERROR] Failed to insert pii data 3319415
+[INFO] data has been pushed to pfi table 3319415
+[ERROR] stocks invested was set to false and no data inserted for 3319415
+[ERROR] bonds invested was set to false and no data inserted for 3319415
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table 7420957
+[INFO] data has been pushed to pfi table 7420957
+[INFO] pushing stocks invested data for 7420957
+[INFO] data has been pushed to stocks table 7420957
+[INFO] pushing bonds invested data for 7420957
+[INFO] data has been pushed to bonds table 7420957
