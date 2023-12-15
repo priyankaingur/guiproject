@@ -22,3 +22,203 @@
 [INFO] generated user ID successfully
 [INFO] successfully pushed data to users table
 [INFO] data has been pushed to pii table
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[ERROR] Failed to insert pii data6521614
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[ERROR] Failed to insert pii data494796
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table9415144
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[ERROR] Failed to insert pii data170281
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[ERROR] Failed to insert pii data6792558
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[ERROR] Failed to insert pii data5145786
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[ERROR] Failed to insert pii data2495308
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[ERROR] Failed to insert pii data5194762
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table6419649
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table4159010
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table3564677
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table8041170
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table425393
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table3086739
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table9402749
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table2091892
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table3302308
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table856703
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table6874210
+[ERROR] stocks invested was set to false and no data inserted for 6874210
+[ERROR] bonds invested was set to false and no data inserted for 6874210
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table 9492151
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table 7848329
+[INFO] failed to insert pfi table 7848329
+[ERROR] stocks invested was set to false and no data inserted for 7848329
+[ERROR] bonds invested was set to false and no data inserted for 7848329
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table 1244837
+[INFO] failed to insert pfi table 1244837
+[ERROR] pushing stocks invested data for 1244837
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table 2416094
+[INFO] failed to insert pfi table 2416094
+[ERROR] pushing stocks invested data for 2416094
+[INFO] failed to insert stocks table 2416094
+[ERROR] pushing bonds invested data for 2416094
+[INFO] failed to insert bonds table 2416094
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table 8645671
+[INFO] failed to insert pfi table 8645671
+[INFO] pushing stocks invested data for 8645671
+[INFO] data has been pushed to stocks table 8645671
+[INFO] pushing bonds invested data for 8645671
+[ERROR] failed to insert bonds table 8645671
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table 2529498
+[INFO] failed to insert pfi table 2529498
+[INFO] pushing stocks invested data for 2529498
+[INFO] data has been pushed to stocks table 2529498
+[INFO] pushing bonds invested data for 2529498
+[ERROR] failed to insert bonds table 2529498
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] failed to insert pfi table 8692744
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] ************sending pfi data *************
+[INFO] failed to insert pfi table 770471
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] ************sending pfi data *************
+[INFO] failed to insert pfi table 9495606
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] ************sending pfi data *************
+[INFO] failed to insert pfi table 4214664
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] ************sending pfi data *************
+[INFO] failed to insert pfi table 6327019
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] ************sending pfi data *************
+[INFO] failed to insert pfi table 5236780
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] ************sending pfi data *************
+[INFO] failed to insert pfi table 11002
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] ************sending pfi data *************
+[INFO] failed to insert pfi table 3270226
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] ************sending pfi data *************
+[INFO] data has been pushed to pfi table 6356367
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] ************sending pfi data *************
+[INFO] data has been pushed to pfi table 1008722
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] ************sending pfi data *************
+[INFO] data has been pushed to pfi table 9897461
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] ************sending pfi data *************
+[INFO] data has been pushed to pfi table 3279496
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] ************sending pfi data *************
+[INFO] data has been pushed to pfi table 606644
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] ************sending pfi data *************
+[INFO] data has been pushed to pfi table 6623680
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] ************sending pfi data *************
+[INFO] data has been pushed to pfi table 6040093
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] ************sending pfi data *************
+[INFO] data has been pushed to pfi table 9259938
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] ************sending pfi data *************
+[INFO] data has been pushed to pfi table 762902
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] ************sending pfi data *************
+[INFO] data has been pushed to pfi table 1761726
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table 1665387
+[INFO] ************sending pfi data *************
+[INFO] data has been pushed to pfi table 1665387
+[INFO] pushing stocks invested data for 1665387
+[INFO] data has been pushed to stocks table 1665387
+[INFO] pushing bonds invested data for 1665387
+[ERROR] failed to insert bonds table 1665387
+[INFO] generated user ID successfully
+[INFO] pushing bonds invested data for 8779360
+[INFO] data has been pushed to bonds table 8779360
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table 5370106
+[INFO] data has been pushed to pfi table 5370106
+[INFO] pushing stocks invested data for 5370106
+[INFO] data has been pushed to stocks table 5370106
+[INFO] pushing bonds invested data for 5370106
+[INFO] data has been pushed to bonds table 5370106
+[INFO] generated user ID successfully
+[INFO] successfully pushed data to users table
+[INFO] data has been pushed to pii table 511190
+[INFO] data has been pushed to pfi table 511190
+[INFO] pushing stocks invested data for 511190
+[INFO] data has been pushed to stocks table 511190
+[INFO] pushing bonds invested data for 511190
+[INFO] data has been pushed to bonds table 511190

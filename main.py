@@ -36,8 +36,6 @@ fernet = Fernet(key)
 
 
 # define GUI properties
-inp = Checkbutton(window, text="checkbox")
-# inp = Checkbutton(window, text="checkbox",  onvalue=1, offvalue=0)
 input0 = Label(window, text="PII Data").place(x=150, y=30)
 input1 = Label(window, text="UserName").place(x=10, y=50)
 UserName = Entry(window, show='*')
@@ -104,6 +102,7 @@ def generate_userid():
     try:
         logger_object.info("generated user ID successfully")
         user_id = random.randint(0, 9999999)
+        print("User ID:", user_id)
         return user_id
     except Exception:
         logger_object.error("unable to generate the user ID")
@@ -135,17 +134,18 @@ def push_pii(uid):
 # function to insert data into pfi table
 def push_pfi(uid):
     if stocks_invested.get():
-        stocks_id = uid,
+        stocks_id = uid
     else:
         stocks_id = "xxxx"
     if bonds_invested.get():
-        bonds_id = uid,
+        bonds_id = uid
     else:
         bonds_id = "yyyy"
+
     load = {
         "fernet": fernet,
         "uid": uid,
-        "enc_bank_account": fernet.encrypt(BankAccountUserName.get().encode()),
+        "enc_bank_account": fernet.encrypt(BankAccount.get().encode()),
         "enc_retirement_account": fernet.encrypt(RetirementAccount.get().encode()),
         "enc_cc_debt": fernet.encrypt(CCDebt.get().encode()),
         "enc_life_insurance": fernet.encrypt(LifeInsurance.get().encode()),
@@ -183,22 +183,23 @@ def push_data():
     bonds = bonds_invested.get()
     push_user(uid)
     push_pii(uid)
+    push_pfi(uid)
 
 # push stocks data only if stocks_invested is true
     if stocks:
-        # print(stocks_invested.get())
-        logger_object.error("pushing stocks invested data for", uid)
-        push_stocks_data()
+        print(stocks_invested.get())
+        logger_object.info("pushing stocks invested data for " + str(uid))
+        push_stocks_data(uid)
     else:
-        logger_object.error("stocks invested was set to false and no data inserted", uid)
+        logger_object.error("stocks invested was set to false and no data inserted for " + str(uid))
 
 # push bonds data only if bonds_invested is true
     if bonds:
-        # print(bonds_invested.get())
-        logger_object.error("pushing bonds invested data for", uid)
-        push_bonds_data()
+        print(bonds_invested.get())
+        logger_object.info("pushing bonds invested data for " + str(uid))
+        push_bonds_data(uid)
     else:
-        logger_object.error("bonds invested was set to false and no data inserted", uid)
+        logger_object.error("bonds invested was set to false and no data inserted for " + str(uid))
 
 
 # defining main function
