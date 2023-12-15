@@ -29,6 +29,7 @@ def load_user(**load):
         connect.commit()
         logger_object.info("successfully pushed data to users table")
     except Exception as e:
+        print(e)
         logger_object.error("Failed to insert user data")
 
 
@@ -46,7 +47,7 @@ def load_pii(**load):
         cursor.execute("insert into pii(id, user_name, user_email, address, contact_number, date_of_birth, social_security_number, driver_license)"
             "values('" + str(
                 uid) + "', aes_encrypt('" + fernet.decrypt(enc_user_name).decode() + "','key'), " + " aes_encrypt('" + fernet.decrypt(enc_user_email).decode() + "','key'), " + " aes_encrypt('" + fernet.decrypt(enc_user_address).decode() + "','key'), " + " aes_encrypt('" + fernet.decrypt(enc_user_contact).decode() + "','key'), " + " aes_encrypt('" + fernet.decrypt(enc_user_dob).decode() + "','key'), " + " aes_encrypt('" + fernet.decrypt(enc_user_ssn).decode() + "','key'), " + " aes_encrypt('" + fernet.decrypt(enc_user_dl).decode() + "' ,'key'))")
-        # defining a constant instead of duplicating literal is not compatible with aws_encryption function; hence
+        # defining a constant instead of duplicating literal is not compatible with aes_encryption function; hence
         # ignoring the sonarLint recommendation cursor.execute("insert into pii(id, user_name, user_email, address,
         # contact_number, date_of_birth, social_security_number, driver_license)" "values('" + str( uid) + encrypt +
         # fernet.decrypt(enc_user_name).decode() + key + encrypt + fernet.decrypt(enc_user_email).decode() + key +
